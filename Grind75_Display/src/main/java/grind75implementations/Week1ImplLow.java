@@ -2,7 +2,9 @@ package grind75implementations;
 
 import grind75interfaces.Week1;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 //<><><><><>-----| Low level functions use as little libraries as possible |-----<><><><><>\\
 public class Week1ImplLow implements Week1 {
@@ -25,13 +27,16 @@ public class Week1ImplLow implements Week1 {
         return null;
     }
 
+    //<><><><><>-----| Given a string detect if ()[]{} are valid, ie have closure that is appropriate |-----<><><><><>\\
     @Override
-    public boolean validParentheses() {
+    public boolean validParentheses(String s) {
+        //<><><><><>-----| Immediate edge case that would be difficult: ([)] |-----<><><><><>\\
+
         return false;
     }
 
     @Override
-    public List<Integer> mergeTwoSortedLists() {
+    public List<Integer> mergeTwoSortedLists(List<Integer> list1, List<Integer> list2) {
         return null;
     }
 }

@@ -12,6 +12,7 @@ public class main {
 
     //<><><><><>-----| Number Test Cases |-----<><><><><>\\
     static int[] numList = new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    static int[] numDynamo = new int[5];
     static int targetN = 11;
     static List<Integer> list1 = new ArrayList<>();
     static List<Integer> list2 = new ArrayList<>();
@@ -20,6 +21,12 @@ public class main {
         for(int i = 0; i < 5; i++) {
             list1.add((int)(Math.random()*100));
             list2.add((int)(Math.random()*100));
+
+        }
+        int count = 0;
+        for(int i : list1) {
+            numDynamo[count] = i;
+            count++;
         }
     }
 
@@ -28,13 +35,19 @@ public class main {
     static String testParenBad = "(noclosure";
 
 
+//<><><><><>-----|                    |-----<><><><><>\\
+//<><><><><>-----| The Big Red Button |-----<><><><><>\\
+//<><><><><>-----|                    |-----<><><><><>\\
 
     public static void main(String[] args) {
         //<><><><><>-----| Instantiate variables |-----<><><><><>\\
         instNumLists();
 
+        //<><><><><>-----| Verify Variables |-----<><><><><>\\
+        System.out.println("First list of nums: " + list1.toString());
+        System.out.println("First list of nums: " + list2.toString());
 
-        //<><><><><>-----| Low Level Solutions to Week 1 |-----<><><><><>\\
+        //<><><><><>-----| Week 1 tests |-----<><><><><>\\
         Week1ImplLow w1low = new Week1ImplLow();
         Week1ImplHigh w1hig = new Week1ImplHigh();
 
@@ -42,5 +55,6 @@ public class main {
         System.out.println(w1hig.validParentheses(testParen));
         System.out.println(w1hig.validParentheses(testParenBad));
         System.out.println(w1hig.mergeTwoSortedLists(list1, list2));
+        System.out.println(w1low.stockPurchaser(numDynamo));
     }
 }

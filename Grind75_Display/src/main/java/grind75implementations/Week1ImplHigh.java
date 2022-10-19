@@ -49,4 +49,11 @@ public class Week1ImplHigh implements Week1 {
 
         return listFinal;
     }
+
+    //<><><><><>-----| Given a list of ints representing stock price points, find the smallest starting N and largest ending N |-----<><><><><>\\
+    @Override
+    public int stockPurchaser(int[] numList) {
+
+        return 0;
+    }
 }

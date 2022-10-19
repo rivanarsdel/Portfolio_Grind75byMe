@@ -39,4 +39,18 @@ public class Week1ImplLow implements Week1 {
     public List<Integer> mergeTwoSortedLists(List<Integer> list1, List<Integer> list2) {
         return null;
     }
+
+    //<><><><><>-----| Given a list of ints representing stock price points, find the smallest starting N and largest ending N |-----<><><><><>\\
+    @Override
+    public int stockPurchaser(int[] numList) {
+        int result = 0;
+        for(int i = 0; i < numList.length; i++) {
+            for(int j = i+1; j < numList.length; j++) {
+                if(numList[j]-numList[i] > result) {
+                    result = numList[j]-numList[i];
+                }
+            }
+        }
+        return result;
+    }
 }

@@ -33,6 +33,7 @@ public class main {
     //<><><><><>-----| String Test Cases|-----<><><><><>\\
     static String testParen = "()[]{}";
     static String testParenBad = "(noclosure";
+    static String palindrome = "abcdedcba";
 
 
 //<><><><><>-----|                    |-----<><><><><>\\
@@ -56,5 +57,7 @@ public class main {
         System.out.println(w1hig.validParentheses(testParenBad));
         System.out.println(w1hig.mergeTwoSortedLists(list1, list2));
         System.out.println(w1low.stockPurchaser(numDynamo));
+        System.out.println(w1hig.validPalindrome(palindrome));
+        System.out.println(w1hig.validPalindrome(testParen));
     }
 }

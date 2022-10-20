@@ -53,4 +53,18 @@ public class Week1ImplLow implements Week1 {
         }
         return result;
     }
+
+    @Override
+    public boolean validPalindrome(String palindrome) {
+        //<><><><><>-----| Broken by edge case: ababa |-----<><><><><>\\
+        for(int i = 0; i < palindrome.length()/2; i++) {
+            if (palindrome.lastIndexOf(palindrome.charAt(i)) != palindrome.length()-1-i) {
+                System.out.println(palindrome.charAt(i));
+                System.out.println(palindrome.charAt(palindrome.length()-1-i));
+                System.out.println(palindrome);
+                return false;
+            }
+        }
+        return true;
+    }
 }

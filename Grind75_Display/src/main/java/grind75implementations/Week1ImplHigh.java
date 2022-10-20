@@ -56,4 +56,11 @@ public class Week1ImplHigh implements Week1 {
 
         return 0;
     }
+
+    @Override
+    public boolean validPalindrome(String palindrome) {
+        StringBuilder strbld = new StringBuilder(palindrome);
+        return strbld.reverse().toString().equals(palindrome);
+    }
+
 }

@@ -8,5 +8,6 @@ public interface Week1 {
     boolean validParentheses(String tesStr);
     List<Integer> mergeTwoSortedLists(List<Integer> list1, List<Integer> list2);
     int stockPurchaser(int[] numList);
+    boolean validPalindrome(String palindrome);
 
 }

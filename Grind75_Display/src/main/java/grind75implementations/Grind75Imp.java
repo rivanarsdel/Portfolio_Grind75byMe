@@ -1,11 +1,11 @@
 package main.java.grind75implementations;
 
-import grind75interfaces.Week1;
-
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 //<><><><><>-----| Higher level utilizes native Java libraries |-----<><><><><>\\
-public class Week1ImplHigh implements Week1 {
+public class Grind75Imp implements grind75interfaces.Grind75 {
 
 
     @Override
@@ -54,6 +54,12 @@ public class Week1ImplHigh implements Week1 {
     @Override
     public int stockPurchaser(int[] numList) {
 
+        List<Integer> list = new ArrayList<>();
+        for(int i : numList) { list.add(i); }
+        for(Integer i : list) {
+
+        }
+
         return 0;
     }
 
@@ -62,5 +68,36 @@ public class Week1ImplHigh implements Week1 {
         StringBuilder strbld = new StringBuilder(palindrome);
         return strbld.reverse().toString().equals(palindrome);
     }
+
+    @Override
+    public double priceStringer(String priceString) {
+//        Given string "$42.15, $83.44" and the like, find the mean price and sum total
+//        Here we will employ regular expressions to extract the number from the string
+        List<Double> locList = new ArrayList<>();
+        String onePrice = "([0-9]+.)+([0-9]+)";
+        Matcher matcher = Pattern.compile(onePrice).matcher(priceString);
+        while (matcher.find( ))
+        {
+            locList.add(Double.parseDouble(matcher.group()));
+        }
+//       After parsing numbers from string we find sum and average
+        double sumPrice = 0;
+        int counter = 0;
+        double avgPrice = 0;
+        for(double i : locList) {
+            sumPrice += i;
+            counter++;
+        }
+        avgPrice = sumPrice / counter;
+        System.out.println("Sum price: $" + sumPrice);
+        System.out.println("Avg price: $" + avgPrice);
+        return 0;
+    }
+
+
+    //<><><><><>-----| Find the first "bad" version |-----<><><><><>\\
+
+    //<><><><><>-----| Max Subarray |-----<><><><><>\\
+
 
 }

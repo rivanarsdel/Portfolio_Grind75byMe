@@ -1,16 +1,12 @@
 package grind75implementations;
 
-import grind75interfaces.Week1;
-
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
 
 //<><><><><>-----| Low level functions use as little libraries as possible |-----<><><><><>\\
-public class Week1ImplLow implements Week1 {
+public class Week1ImplLow {
 
-    //<><><><><>-----| Given an array of numbers and a target N, return the indexes of the two numbers that add to N |-----<><><><><>\\
-    @Override
+    //<><><><><>-----| Given an array of numbers and a target N, return the indexes of the two numbers that add to N |-----<><><><><>\
+
     public int[] twoSum(int N, int[] numList) {
         int[] result = new int[2];
         for(int i = 0; i < numList.length; i++) {
@@ -27,21 +23,20 @@ public class Week1ImplLow implements Week1 {
         return null;
     }
 
-    //<><><><><>-----| Given a string detect if ()[]{} are valid, ie have closure that is appropriate |-----<><><><><>\\
-    @Override
+    //<><><><><>-----| Given a string detect if ()[]{} are valid, ie have closure that is appropriate |-----<><><><><>\
+
     public boolean validParentheses(String s) {
         //<><><><><>-----| Immediate edge case that would be difficult: ([)] |-----<><><><><>\\
 
         return false;
     }
 
-    @Override
     public List<Integer> mergeTwoSortedLists(List<Integer> list1, List<Integer> list2) {
         return null;
     }
 
-    //<><><><><>-----| Given a list of ints representing stock price points, find the smallest starting N and largest ending N |-----<><><><><>\\
-    @Override
+    //<><><><><>-----| Given a list of ints representing stock price points, find the smallest starting N and largest ending N |-----<><><><><>\
+
     public int stockPurchaser(int[] numList) {
         int result = 0;
         for(int i = 0; i < numList.length; i++) {
@@ -54,7 +49,22 @@ public class Week1ImplLow implements Week1 {
         return result;
     }
 
-    @Override
+//    Rewrite it you sussy baka
+    public int stockStonker(int[] numList) {
+        int result = 0;
+        for(int i = 0; i < numList.length; i++) {
+//            Iterate through numList
+            for(int j = i+1; j < numList.length; j++) {
+//                iterate through with second integer, testing each substraction *following* i, no 4th dimensional travel here
+                if(numList[j]-numList[i] > result) {
+//                    If j-i > result, stock is better == new best day to buy, eventually after testing all cases it finishes
+                    result = numList[j]-numList[i];
+                }
+            }
+        }
+        return result;
+    }
+
     public boolean validPalindrome(String palindrome) {
         //<><><><><>-----| Broken by edge case: ababa |-----<><><><><>\\
         for(int i = 0; i < palindrome.length()/2; i++) {
@@ -66,5 +76,9 @@ public class Week1ImplLow implements Week1 {
             }
         }
         return true;
+    }
+
+    public void printOMatic(String newStr) {
+        
     }
 }
